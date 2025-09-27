@@ -1,0 +1,224 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq80v0entom56"]
+
+[ext_resource type="Theme" uid="uid://bydged2r6vdsc" path="res://theme/ui_theme.tres" id="1_dalyv"]
+[ext_resource type="Script" uid="uid://nvrgidubknh8" path="res://code/ui/PartyMenu.gd" id="2_kvqv1"]
+[ext_resource type="Script" uid="uid://d0fynkddbvi2c" path="res://code/ui/HeroList.gd" id="3_ri3ht"]
+
+[node name="PartyMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dalyv")
+script = ExtResource("2_kvqv1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -20.0
+offset_right = 192.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Build your Party"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Heroes for Hire"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+
+[node name="list_available" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/PanelContainer3/VBoxContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_ri3ht")
+
+[node name="button_hire" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Hire"
+
+[node name="panel_info" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hero Information"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="edit_name" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 8
+columns = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Strength:"
+
+[node name="label_stre" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Wisdom:"
+
+[node name="label_wisd" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Agility:"
+
+[node name="label_agil" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="Label7" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Luck:"
+
+[node name="label_luck" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="Label9" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Dexterity"
+
+[node name="label_dext" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="Label11" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Vitality:"
+
+[node name="label_vita" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/panel_info/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "99"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+text = "Party Members"
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+
+[node name="list_hired" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2/PanelContainer4/VBoxContainer/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("3_ri3ht")
+
+[node name="button_remove" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Remove"
